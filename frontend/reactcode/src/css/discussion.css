@@ -1,0 +1,64 @@
+/* discussion */
+.discussion-main{
+    display: flex;
+    justify-content: space-around;
+  } 
+  .room-detail{
+    width: 70vw;
+    border-right: 2px solid rgb(228, 227, 227);
+    padding: 4px 20px;
+    margin: 6px;
+    height: 40vh;
+  }
+  .join-room button{
+    text-align: center;
+    padding: 9px 12px;
+    font-size: 20px;
+    width: 100%;
+  }
+  .schedule{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 10vh;
+    justify-content: center;
+  }
+  .schedule input{
+    padding: 8px;
+    border: none;
+    background-color: rgb(239, 238, 238);
+    margin: 2px;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+  .schedule label{
+    font-size: 20px;
+  }
+  .schedule button{
+    background-color: rgb(22, 170, 22);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 13px;
+    color: white;
+    margin: 10px;
+    font-size: 19px;
+  }
+
+  .discussion-history ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .discussion-history ul li{
+    margin: 8px;
+    padding: 18px;
+    font-size: 19px;
+    background-color: rgb(208, 208, 208);
+    border: 1.8px solid rgb(122, 121, 121);
+    border-radius: 12px;
+    width: 80%;
+  }
+  

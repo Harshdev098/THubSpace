@@ -1,0 +1,40 @@
+.Proj_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Proj_form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    border: 1.6px solid black;
+    margin: 6px;
+    padding: 10px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.Proj_form form input{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(222, 219, 219);
+    font-size: 20px;
+}
+.Proj_form form label{
+    font-size: 22px;
+}
+.Proj_form form .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.Proj_form form button{
+    padding: 9px 11px;
+    margin: 4px;
+    font-size: 20px;
+}

@@ -1,0 +1,158 @@
+.chat-form form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+}
+
+.chat-form form input {
+    width: 30vw;
+    padding: 20px 18px;
+    border: none;
+    font-size: 22px;
+    border-radius: 40px;
+    background-color: rgb(221, 218, 218);
+    outline: none;
+}
+
+.chat-form form button {
+    padding: 14px 16px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 6px;
+}
+
+.chat_container {
+    height: 80vh;
+    display: flex;
+}
+
+.room_members {
+    width: 20vw;
+    border-right: 1.6px solid rgb(176, 173, 173);
+}
+
+.room_members h2 {
+    font-size: 26px;
+    text-align: center;
+    padding: 6px;
+}
+
+.room_members ul {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+}
+
+.room_members ul li {
+    font-size: 19px;
+    background-color: rgb(221, 219, 219);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    clear: both;
+    /* Ensure the element clears previous floats */
+}
+
+.toggle {
+    display: none;
+}
+
+.room_members {
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.all_messages {
+    padding: 20px;
+    margin: 15px;
+}
+
+.all_messages ul {
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.you {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: rgb(221, 218, 218);
+    max-width: 50%; 
+    border-radius: 16px;
+    margin-left: auto; 
+    text-align: left; 
+    position: relative;
+    /* clear: both; */
+}
+
+.other {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: rgb(221, 218, 218);
+    max-width: 50%; 
+    border-radius: 16px;
+    margin-right: auto;
+    text-align: left; 
+    position: relative;
+    clear: both; 
+}
+/* .other{
+    padding: 7px;
+    margin: 8px;
+    font-size: 22px;
+    background-color: rgb(221, 218, 218);
+    width: 27vw;
+    border-radius: 24px;
+} */
+.all_messages ul li h4 {
+    margin: 0;
+    padding: 3px 4px;
+    font-size: 19px;
+}
+.all_messages ul li span{
+    font-size: 15px;
+    padding: 10px 2px;
+}
+#date{
+    margin: 2px auto;
+    padding: 8px;
+    display: inline;
+    background-color: rgb(192, 191, 191);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18px
+}
+.all_messages ul li p {
+    margin: 0;
+    padding: 4px 2px 2px 12px;
+    font-size: 20px;
+}
+
+.message_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fixeToggle {
+    position: sticky;
+    top: 0;
+    display: block;
+    width: 100%;
+    background-color: rgb(247, 244, 244);
+    margin: 0;
+}

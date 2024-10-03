@@ -1,0 +1,126 @@
+.upper-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.nav-search {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-search input {
+    padding: 8px;
+    width: 20vw;
+    font-size: 19px;
+    border-radius: 10px;
+}
+
+.nav-search button {
+    margin: 10px 12px 10px 6px;
+    padding: 10px;
+    background-color: rgb(63, 166, 63);
+    font-size: 19px;
+}
+
+nav {
+    background-color: rgb(226, 242, 226);
+    overflow: hidden;
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li {
+    padding: 10px;
+    margin: 3px;
+    font-size: 19px;
+}
+
+nav ul li:last-child {
+    padding-right: 24px;
+}
+
+nav ul li button {
+    padding: 10px 14px;
+    background-color: rgb(63, 166, 63);
+    font-size: 19px;
+}
+.createP {
+    padding: 10px;
+    margin: 3px;
+    font-size: 19px;
+    background-color: rgb(215, 215, 240);
+    text-decoration: none;
+    color: black;
+    border-radius: 6px;
+}
+
+.createP:hover {
+    background-color: rgb(191, 191, 245); 
+    transition: all 0.5s ease-in-out;
+}
+.left-side {
+    width: 24vw;
+    border-right: 1.6px solid rgb(204, 203, 203);
+    height: 80vh;
+}
+
+main {
+    display: flex;
+    width: 100%;
+}
+
+.page-main {
+    flex: 1;
+}
+
+.left-side ul {
+    list-style: none;
+    margin: 10px;
+    padding: 6px;
+}
+.left-side ul li{
+    margin: 8px;
+    padding: 14px;
+    background-color: rgb(230, 228, 228);
+    border-radius: 8px;
+    font-size: 19px;
+}
+.left-side ul li:hover{
+    background-color: rgb(191, 191, 245);
+    transition: all 0.5s ease-in-out;
+}
+.feeds {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    padding: 20px; 
+}
+
+.feeds ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+}
+
+.feeds ul li {
+    padding: 10px;
+    margin-bottom: 10px; 
+    width: 80%; 
+    font-size: 20px;
+    border: 1.6px solid rgb(194, 193, 193);
+    border-radius: 12px;
+    background-color: rgb(237, 235, 235);
+}
