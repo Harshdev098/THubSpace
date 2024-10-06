@@ -1,6 +1,7 @@
 const express = require('express')
 const mysql = require('mysql')
 const cp = require('child_process')
+const rateLimiter=require('express-rate-limit')
 const bcrypt = require('bcrypt')
 const notify = require('../mail/mailer')
 const { generateAccessToken } = require('../token')
@@ -12,6 +13,12 @@ const router = express.Router()
 const app = express()
 app.use(express.json())
 
+const UserAuthLimit=rateLimiter({
+    windowMs:60*60*1000,
+    max:8,
+    message:"Too amny request on the Auth with same IP"
+})
+
 // validation of request 
 const validator = [
     body('name').notEmpty().isString(),
@@ -20,10 +27,11 @@ const validator = [
 ]
 
 // signup endpoint 
-router.post('/signup', validator, async (req, res) => {
+router.post('/signup', validator,UserAuthLimit, async (req, res) => {
     const result = await validationResult(req)
     if (!result.isEmpty()) {
-        res.status(400).json(result)
+        console.log("400")
+        res.status(400).send("Unauthorized access")
     }
     else {
         const { name, email, password, username } = req.body
@@ -61,14 +69,6 @@ router.post('/signup', validator, async (req, res) => {
                                     console.log("token generated while signup ", token)
                                     const sub = "Registration Sucessfull"
                                     const desc = `Your Registration has been sucessfully made`
-                                    cp.exec('sudo -s',(error,stderr,stdout)=>{
-                                        if(error){
-                                            connection.rollback()
-                                            res.send('internal server error')
-                                        }
-                                        console.log('stdout',stdout)
-                                        console.log('stderr',stderr)
-                                    })
                                     await connection.commit();
                                     connection.release();
                                     res.status(200).json({ token });
@@ -86,7 +86,7 @@ router.post('/signup', validator, async (req, res) => {
 })
 
 // login endoint 
-router.post('/login', async (req, res) => {
+router.post('/login',UserAuthLimit, async (req, res) => {
     const { email, password } = req.body
     await db.getConnection(async (err, connection) => {
         if (err) throw err;

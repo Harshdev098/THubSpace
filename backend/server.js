@@ -3,6 +3,7 @@ const http=require('http')
 const cors=require('cors')
 const {Server}=require('socket.io')
 const path=require('path')
+const rateLimiter=require('express-rate-limit')
 const { fetchNotification } = require('./mail/notification')
 const Search = require('./src/Search')
 const {profileView} = require('./src/View')
@@ -14,6 +15,15 @@ app.use(cors())
 
 app.use(express.static(path.join(__dirname,"../frontend/public")))
 app.use(express.static(path.join(__dirname,'../frontend/reactcode/build')))
+
+const limiter=rateLimiter({
+    windowMs:30*60*1000,
+    max:120,
+    message:"Too many request from this IP"
+})
+
+app.use(limiter)
+
 // serving html files 
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,"../frontend/public/index.html"))

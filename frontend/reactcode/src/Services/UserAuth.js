@@ -56,6 +56,9 @@ export const userCreation=async(name,email,password,username)=>{
     else if (response.status === 401) {
         return {status:false,message:"User already exists"}
     }
+    else if(response.status === 400){
+        return {status:false,message:"Not a valid input"}
+    }
     else {
         return {status:false,message:"An error occured"}
     }
